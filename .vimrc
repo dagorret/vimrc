@@ -1,70 +1,67 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'tpope/vim-vinegar'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-
 syntax enable
 
+so ~/.vim/plugins.vim
 
-set backspace=indent,eol,start        
-let mapleader = ','                  
-set number                          
+set backspace=indent,eol,start        "Hacer backspace un comportamiento igual que otros editores
+let mapleader = ','                   "Default leader is \, pero se cambia a ,
+set number                            "Activa los números de línea
+set linespace=8                       "Gvim => espaciado entre líneas
 
 
-"-----------Visuals----------"
+"-------Visuals---------"
 colorscheme atom-dark-256
 set t_CO=256
-set guifont=Fira\ Code\ 15
-set linespace=15
-"set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
-set guioptions-=l  "remove left-hand scroll baroptions-=l
+set linespace=12
+set guifont=Fira\ Code\ 15 
+:set guioptions-=m  "remove menu bar
+:set guioptions-=T  "remove toolbar
+set guioptions-=l
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
 
-
-"-----------Searching----------"
+"-------Searching---------"
 set hlsearch
 set incsearch
 
-"-----------Split Management----------"
+
+"-------Split Management------"
 set splitbelow
 set splitright
+
+nnoremap <C-W>M <C-W>\|<C-W>_
+nnoremap <C-W>m <C-W>=
 
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
+"-------Mappings---------"
 
-
-
-"-----------Mappings----------"
-
-"Acceso fácil para editar vimrc
+"Facilitar la edición del .vimrc
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
-
-"Remover el resaltado de búsqueda
+"Remover simplemente el resaltado de la búsqueda
 nmap <Leader><space> :nohlsearch<cr>
+"Set menu bar
+nmap <Leader>om :set guioptions-=m<cr>  
+nmap <Leader>oM :set guioptions+=m<cr>  
 
+"Mapping NERDTree
+nmap <Leader>t1 :NERDTreeToggle<cr>
 
+"-------Auto-Commands-----"
 
-"-----------Auto-Commands----------"
+"Automáticamente carga el .vimrc después de guardarlos
 augroup autosourcing
 	autocmd!
-	autocmd BufWritePost .vimrc source %
+	autocmd BufwritePost .vimrc source %
 augroup END
+
+"-------Help-----------"
+"     gg"+yG – copy the entire buffer into + (normal mode)
+"    "*dd – cut the current line into * (normal mode)
+"    "+gp – paste from + after the cursor (works in both normal and visual modes)
+"    :%y * – copy the entire buffer into * (this one is an ex command) 
+
+    "*dd – cut the current line into * (normal mode)
+    "+p – paste from + after the cursor (works in both normal and visual modes)
