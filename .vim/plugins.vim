@@ -7,5 +7,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-vinegar'
 Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
 " Initialize plugin system
 call plug#end()

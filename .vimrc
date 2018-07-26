@@ -12,6 +12,7 @@ set linespace=8                       "Gvim => espaciado entre líneas
 colorscheme atom-dark-256
 set t_CO=256
 set linespace=12
+set guioptions-=e   "Remover gui tabs
 set guifont=Fira\ Code\ 15 
 :set guioptions-=m  "remove menu bar
 :set guioptions-=T  "remove toolbar
@@ -36,6 +37,22 @@ nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
+
+
+"-------Plugins---------"
+"/
+"/ CtrlP
+"/
+let g:ctrlp_custom_ignore = 'node_modules\|git|'
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
+
+"/
+"/ NERDTreew
+"/
+
+let NERDTreeHijakNewtr = 0
+
+
 "-------Mappings---------"
 
 "Facilitar la edición del .vimrc
@@ -48,6 +65,15 @@ nmap <Leader>oM :set guioptions+=m<cr>
 
 "Mapping NERDTree
 nmap <Leader>t1 :NERDTreeToggle<cr>
+
+"CtrlP
+nmap <c-R> :CtrlPBufTag<cr>
+nmap <Leader>tr :CtrlPMRUFiles<cr>
+
+"Ctags
+nmap <Leader>f :tag<space>
+
+
 
 "-------Auto-Commands-----"
 
