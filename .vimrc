@@ -4,7 +4,7 @@ so ~/.vim/plugins.vim
 
 set backspace=indent,eol,start        "Hacer backspace un comportamiento igual que otros editores
 let mapleader = ','                   "Default leader is \, pero se cambia a ,
-set number                            "Activa los números de línea
+set nonumber                            "Activa los números de línea
 set linespace=8                       "Gvim => espaciado entre líneas
 
 
@@ -20,6 +20,18 @@ set guioptions-=l
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
+hi LineNr guibg=bg
+hi LineNr ctermbg=bg
+
+"Setting left
+set foldcolumn=2
+hi foldcolumn guibg=bg
+hi foldcolumn ctermbg=bg
+
+"settin vps
+hi vertsplit guifg=bg guibg=bg
+hi vertsplit ctermfg=bg ctermbg=bg
+
 
 "-------Searching---------"
 set hlsearch
