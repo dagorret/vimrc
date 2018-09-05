@@ -106,6 +106,14 @@ augroup autosourcing
 	autocmd BufwritePost .vimrc source %
 augroup END
 
+
+"-------Tab-Setting-----"
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+filetype plugin indent on
+
+
 "-------Help-----------"
 "     "+y – copy the entire buffer into + (normal mode)
 "    "*dd – cut the current line into * (normal mode)
